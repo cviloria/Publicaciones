@@ -1,0 +1,23 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Exo+2:wght@300;400;600&display=swap');
+
+
+/* You can add global styles to this file, and also import other style files */
+
+@import "../assets/variables.scss";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: $font-family-1 !important; }
+
+
+
+
+
+@import "~bootstrap/scss/bootstrap";
+
+.login-background{
+    background-color: $background-login !important;
+    background-image: $background-image-login !important;     
+}

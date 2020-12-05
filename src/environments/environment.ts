@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlApi:'https://5fcba8b351f70e00161f1d52.mockapi.io/api/v1/'
+
 };
 
 /*
