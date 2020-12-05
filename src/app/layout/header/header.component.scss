@@ -1,0 +1,85 @@
+@import '../../../assets/variables.scss';
+
+.navbar{
+    background: linear-gradient(135deg,$color-blue,$color-blue-1);
+	.nav li > a, .navbar-brand {
+        max-height: 50px;
+        color: #fff;
+        font-weight: $weight;
+		width: auto;
+		background: transparent !important;
+		font-size: 18px;
+		transition: 0.2s ease-in-out;
+		&:hover{			
+			font-size: 14px;
+			.link {
+				width: 100%;
+				padding: 0 5px 0 5px;
+				visibility: visible;
+				font-size: 14px;
+			}
+		}
+	}
+    .link {
+		width: 0;		
+		transition: 0.2s ease-in-out;
+		visibility: hidden;
+		font-size: 0px;
+	}
+}
+
+.navbar-nav{
+    .nav-item,.nav-link{
+        color:#fff;
+    }
+}
+
+
+.navbar-toggler{
+    color: #fff;
+    border-color: #fff;
+}
+
+.logo{
+    background-image: url(/assets/images/logo-loren.svg);
+    background-size:100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    width: 40px;
+    height: 40px;
+    
+    
+}
+
+.logo + span{
+    color:#fff;
+    font-weight: $weight;
+    font-size: 20px;
+
+}
+
+a:hover{
+    color: transparent;
+    text-decoration: none;
+}
+
+.content-logo{
+    padding: 0px 8px;
+    border-radius: 4px;        
+    cursor: pointer;
+    &:hover{ 
+        background-color: rgba(209,209,240,0.2);
+       
+    }
+}
+
+.circle{
+    img{
+        border-radius: 50%;
+        border: 1px solid #f5f5f5;
+    }
+}
+
+.navbar .navbar-brand:hover{
+    font-size: $font-size-18 !important;
+}
