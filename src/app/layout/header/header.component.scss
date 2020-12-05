@@ -83,3 +83,27 @@ a:hover{
 .navbar .navbar-brand:hover{
     font-size: $font-size-18 !important;
 }
+
+.user-welcome{
+    color: #fff;
+    cursor: pointer;
+    &:hover{ 
+        background-color: rgba(209,209,240,0.2);
+       
+    }
+}
+
+.dropdown-toggle::after{
+    display: none !important;
+}
+
+.dropdown-menu {
+    a{
+        color:$color-green;
+        &:hover{
+            color:$color-blue-2;
+            background-color: transparent;
+        }
+    }
+
+}

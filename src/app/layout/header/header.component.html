@@ -5,11 +5,11 @@
     </a>
 
     <div class="d-none d-sm-block ml-2">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" routerLinkActive="active" routerLink="/publicaciones">
             <fa-icon [icon]="faHome"></fa-icon>
             <span class="link"> Home</span>
         </a>
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" routerLinkActive="active" routerLink="/publicaciones">
             <fa-icon [icon]="faStickyNote"></fa-icon>
             <span class="link">My Posts</span>
         </a>
@@ -21,23 +21,43 @@
     <div (click)="collapse=true" [ngClass]="{ collapse: collapse, 'navbar-collapse': true }">
         <ul class="d-block d-sm-none mr-auto navbar-nav">
             <li class="nav-item d-flex">
-                <a class="navbar-brand circle" href="#">
-                    <img  width="35" height="35" src="{{users[random]}}" alt="Profile">
-                    <fa-icon [icon]="faChevronDown" size="xs" class="ml-1"></fa-icon>
+                <ng-container *ngTemplateOutlet="hello"></ng-container>
+               <ng-container *ngTemplateOutlet="circle_user"></ng-container>
+            </li>
+            <li class="nav-item d-flex">
+                <fa-icon [icon]="faHome" class="mt-2"></fa-icon>
+                <a class="nav-link ml-1" routerLinkActive="active" routerLink="/publicaciones">Home
                 </a>
             </li>
             <li class="nav-item d-flex">
-                <fa-icon [icon]="faHome" class="mt-2"></fa-icon><a class="nav-link ml-1" href="#">Home<span
-                        class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item d-flex">
-                <fa-icon [icon]="faStickyNote" class="mt-2"></fa-icon><a class="nav-link ml-1" href="#">My Posts</a>
+                <fa-icon [icon]="faStickyNote" class="mt-2"></fa-icon>
+                <a class="nav-link ml-1" routerLinkActive="active" routerLink="/publicaciones">My Posts
+                </a>
             </li>
         </ul>
     </div>
-
-    <a class="navbar-brand circle d-none d-sm-block" href="#">
-        <img  width="35" height="35" src="{{users[random]}}" alt="Profile">
-        <fa-icon [icon]="faChevronDown" size="xs" class="ml-1"></fa-icon>
-    </a>
+    <div class="d-none d-sm-flex">
+        <ng-container *ngTemplateOutlet="hello" ></ng-container>
+        <ng-container *ngTemplateOutlet="circle_user"></ng-container>
+    </div>
 </nav>
+
+<ng-template #circle_user>
+    <div ngbDropdown>
+        <a class="navbar-brand circle" routerLink="/publicaciones" ngbDropdownToggle>
+            <img  width="35" height="35" src="{{user.avatar}}" alt="Profile">
+            <fa-icon [icon]="faChevronDown" size="xs" class="ml-1"></fa-icon>
+        </a>
+        <div ngbDropdownMenu  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="/publicaciones">Settings</a>
+          <a class="dropdown-item" (click)="logut()" style="cursor: pointer;">Logout</a>
+
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #hello>
+    <div class="nav-item mr-2 mt-2 p-1 user-welcome">
+        Hola {{user.name}}!!
+    </div>
+</ng-template>

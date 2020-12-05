@@ -1,1 +1,34 @@
-<p>login works!</p>
+<div class="card card-container">
+    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+    <p id="profile-name" class="profile-name-card"></p>
+    <!--FORM -->
+    <form class="form-signin" [formGroup]="formLogin">
+        <span id="reauth-email" class="reauth-email"></span>
+
+        <input type="email" formControlName="email" class="form-control mb-0" placeholder="Email address" autofocus>
+        <div *ngIf="formLogin.get('email').touched && formLogin.get('email').errors?.required"
+            class="invalid-feedback d-block ml-2">
+            <span>Este campo es requerido</span>
+        </div>
+       
+        <input [attr.type]="hide?'password':'text'" formControlName="password" class="form-control mt-3 mb-0" placeholder="Password">
+        <div *ngIf="formLogin.get('password').touched && formLogin.get('password').errors?.required"
+            class="invalid-feedback d-block ml-2">
+            <span>Este campo es requerido</span>
+        </div>
+        <small (click)="hide=!hide" *ngIf="hide" class="float-md-right mt-1 show-password">Mostrar contraseña</small>
+        <small (click)="hide=!hide" *ngIf="!hide" class="float-md-right mt-1 show-password">Ocultar contraseña</small>
+
+        <div id="remember" class="checkbox mt-4">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="login()">Sign in</button>
+    </form>
+    <!-- /FORM -->
+    <a href="#" class="forgot-password">
+        Forgot the password?
+    </a>
+</div>
+<simple-notifications></simple-notifications>

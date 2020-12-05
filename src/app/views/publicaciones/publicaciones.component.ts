@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-publicaciones',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicacionesComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(DOCUMENT) private _document,) { }
 
   ngOnInit() {
+    this._document.body.classList.remove('login-background');
   }
 
 }

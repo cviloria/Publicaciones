@@ -16,3 +16,8 @@ body { margin: 0; font-family: $font-family-1 !important; }
 
 
 @import "~bootstrap/scss/bootstrap";
+
+.login-background{
+    background-color: $background-login !important;
+    background-image: $background-image-login !important;     
+}
