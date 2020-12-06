@@ -1,3 +1,4 @@
+import { ReactionsComponent } from './components/reactions/reactions.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { PostInputComponent } from './components/post-input/post-input.component';
 import { NgModule } from '@angular/core';
@@ -14,7 +15,8 @@ import { MomentModule } from 'ngx-moment';
     PublicacionesComponent,
     PostInputComponent,
     PostCardComponent,
-    CommentsComponent
+    CommentsComponent,
+    ReactionsComponent
   ],
   imports: [
     CommonModule,

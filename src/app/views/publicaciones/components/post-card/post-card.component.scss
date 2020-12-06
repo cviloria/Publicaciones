@@ -1,4 +1,4 @@
-@import "../../../../../assets/variables.scss";
+
 
 .age{
     font-size: 12px;
@@ -6,10 +6,19 @@
     font-style: italic;
 }
 
-.comments-count{
-    cursor: pointer;
-    &:hover{
-        color: $color-blue-2;
-        background-color: transparent;
-    }
+img {
+    border-radius: 10px;
+    padding-right: 5px;
+    width: 60px;
+    height: 55px
+}
+
+img:hover {
+    cursor: pointer
+}
+
+.round .align-self-start {
+    border-radius: 100%;
+    width: 45px;
+    height: 40px
 }

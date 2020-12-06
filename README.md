@@ -1,3 +1,8 @@
+# API GENERATE 
+IMAGEN `mockapi_diagram.png`
+
+API PROJECT GENERATE  [MOCKAPI](https://mockapi.io)
+
 # Publicaciones
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.

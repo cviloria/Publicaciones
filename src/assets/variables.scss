@@ -1,10 +1,30 @@
 
 @mixin placeholder {
-    ::-webkit-input-placeholder {@content}
-    :-moz-placeholder           {@content}
-    ::-moz-placeholder          {@content}
-    :-ms-input-placeholder      {@content}  
+    &::-webkit-input-placeholder {@content}
+    &:-moz-placeholder           {@content}
+    &::-moz-placeholder          {@content}
+    &:-ms-input-placeholder      {@content}  
 }
+$color-background-scroll: #ededed;
+$color-background-scroll-1: #b0bcc6;
+
+@mixin custom-scroll-bar {
+    &::-webkit-scrollbar {
+        width: 7px;
+        @content
+    }
+    &::-webkit-scrollbar-track  {
+        background: $color-background-scroll; 
+        @content}
+    &::-webkit-scrollbar-thumb  {
+        background: $color-background-scroll-1; 
+        @content}
+    &::-webkit-scrollbar-thumb:hover  {
+        background: $color-background-scroll-1; 
+        @content}
+}
+
+
 
 $font-family-1: 'Exo 2', sans-serif;
 $font-family-2: 'Architects Daughter', cursive;

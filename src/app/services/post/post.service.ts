@@ -21,9 +21,22 @@ export class PostService {
     
   }
   
-  updatePost(id_user:number ,post_id:number,data): Observable<any[]> {
+  updatePost(id_user:number ,post_id:string, data): Observable<any[]> {
     return this.apiService.put<any>(`users/${id_user}/post/${post_id}`,data);      
   }
+
+  getCommentsByPost(id_user:number,post_id: string, parameters=''): Observable<any[]> {
+    return this.apiService.get<any>(`users/${id_user}/post/${post_id}/comments`,parameters);  
+
+  }
+
+  sendComment(id_user:number,post_id:string,data): Observable<any[]> {
+
+    return this.apiService.post<any>(`users/${id_user}/post/${post_id}/comments`,data);  
+    
+  }
+
+
 }
 
 export interface Post{
@@ -39,4 +52,16 @@ export interface Post{
   userId: string;
   fullName: string;
   countComments: number;
+}
+
+export interface Comment{
+  createdAt: string;
+  fullName: string;
+  id: string;
+  likes: number;
+  love: number;
+  owner: number;
+  postId: string;
+  smile: number;
+  text: string;
 }

@@ -11,8 +11,8 @@ input, textarea {
     -webkit-font-smoothing: antialiased;    
     font-size: 1rem;
     color: $text-color;
-    @include placeholder {
-      color: $placeholder;
+    @include placeholder {     
+      font-family: $font-family-2 !important;
     }
 }
 

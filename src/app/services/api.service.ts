@@ -52,11 +52,21 @@ export class ApiService {
       console.error('An error occurred:', error.error.message);
     } else {
       const codeInvalid=[400,404];
+      let menssage =''
+      if(typeof error.error ==='object'){
+        if(error.error.msg){
+          menssage= error.error.msg;
+        }else{
+          menssage= JSON.stringify(error.error);
+        }
+      }else{
+        menssage= error.error
+      }
       if (codeInvalid.includes(error.status)) {
-        this.notificationsService.warn('Oppps,', error.error, this.helper.optionsNotify);
+        this.notificationsService.warn('Oppps,', menssage, this.helper.optionsNotify);
       }
       if(error.status==500){
-        this.notificationsService.error('Oppps,', error.error, this.helper.optionsNotify);
+        this.notificationsService.error('Oppps,', menssage, this.helper.optionsNotify);
       }
       console.error(
         `Backend returned code ${error.status}, ` +

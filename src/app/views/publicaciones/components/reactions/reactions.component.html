@@ -1,0 +1,22 @@
+<div class="bottom-comment">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="reactions-count d-flex">
+                <div class="ico-reactions like-ico"></div>   
+                <div class="count" *ngIf="showLeyend"> {{likes}}</div> 
+                <div class="ico-reactions smile-ico"></div>  
+                <div class="count" *ngIf="showLeyend"> {{smile}}</div> 
+                <div class="ico-reactions loves-ico"></div>  
+                <div class="count" *ngIf="showLeyend"> {{loves}}</div> 
+            </div>                      
+        </div>
+        <div class="col-md-6 col-12  text-md-right">
+            <span class="comments-count d-flex justify-content-md-end mr-md-3 mt-3 mt-md-0" 
+                (click)="OnShow.emit()">
+                <div class="ico-reactions comment-ico"></div>   
+                <div class="comment-count" *ngIf="showLeyend"> ({{countComments}})</div> 
+            </span>
+        </div>
+
+    </div>
+</div>
