@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-md-6 col-12">
             <div class="reactions-count d-flex">
-                <div class="ico-reactions like-ico"></div>   
+                <div class="ico-reactions like-ico" (click)="reaction('likes')"></div>   
                 <div class="count" *ngIf="showLeyend"> {{likes}}</div> 
-                <div class="ico-reactions smile-ico"></div>  
+                <div class="ico-reactions smile-ico" (click)="reaction('smiles')"></div>  
                 <div class="count" *ngIf="showLeyend"> {{smile}}</div> 
-                <div class="ico-reactions loves-ico"></div>  
+                <div class="ico-reactions loves-ico" (click)="reaction('loves')"></div>  
                 <div class="count" *ngIf="showLeyend"> {{loves}}</div> 
             </div>                      
         </div>

@@ -24,14 +24,24 @@
                 <ng-container *ngTemplateOutlet="hello"></ng-container>
                <ng-container *ngTemplateOutlet="circle_user"></ng-container>
             </li>
-            <li class="nav-item d-flex">
+            <li class="nav-item d-flex"> 
                 <fa-icon [icon]="faHome" class="mt-2"></fa-icon>
                 <a class="nav-link ml-1" routerLinkActive="active" routerLink="/publicaciones">Home
                 </a>
+            </li>            
+            <li class="nav-item d-flex">      
+                <fa-icon [icon]="faStickyNote" class="mt-2"></fa-icon>         
+                <a class="nav-link ml-1" routerLinkActive="active" routerLink="/publicaciones">Home
+                </a>
             </li>
-            <li class="nav-item d-flex">
-                <fa-icon [icon]="faStickyNote" class="mt-2"></fa-icon>
-                <a class="nav-link ml-1" routerLinkActive="active" routerLink="/publicaciones">My Posts
+            <li class="nav-item d-flex">   
+                <fa-icon [icon]="faCog" class="mt-2"></fa-icon>             
+                <a class="nav-link ml-1" routerLinkActive="active" routerLink="/publicaciones">Settings
+                </a>
+            </li>
+            <li class="nav-item d-flex">  
+                <fa-icon [icon]="faSignOutAlt" class="mt-2"></fa-icon>             
+                <a class="nav-link ml-1" routerLinkActive="active" (click)="logut()">Logout
                 </a>
             </li>
         </ul>
@@ -46,11 +56,11 @@
     <div ngbDropdown>
         <a class="navbar-brand circle" routerLink="/publicaciones" ngbDropdownToggle>
             <img  width="35" height="35" src="{{user.avatar}}" alt="Profile">
-            <fa-icon [icon]="faChevronDown" size="xs" class="ml-1"></fa-icon>
+            <fa-icon [icon]="faChevronDown" size="xs" class="ml-1 d-none d-sm-inline-flex"></fa-icon>
         </a>
         <div ngbDropdownMenu  class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink="/publicaciones">Settings</a>
-          <a class="dropdown-item" (click)="logut()" style="cursor: pointer;">Logout</a>
+          <a class="dropdown-item" routerLink="/publicaciones"><fa-icon [icon]="faCog" class="mr-2"></fa-icon>Settings</a>
+          <a class="dropdown-item" (click)="logut()" style="cursor: pointer;"><fa-icon [icon]="faSignOutAlt" class="mr-2"></fa-icon>Logout</a>
 
         </div>
     </div>

@@ -9,6 +9,7 @@ import { PublicacionesComponent } from './publicaciones.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostCardComponent } from './components/post-card/post-card.component';
 import { MomentModule } from 'ngx-moment';
+import { MatProgressBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MomentModule } from 'ngx-moment';
     PublicacionesRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MomentModule
+    MomentModule,
+    MatProgressBarModule
   ]
 })
 export class PublicacionesModule { }

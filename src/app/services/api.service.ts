@@ -79,9 +79,7 @@ export class ApiService {
 
 
 
-  private processResponse(response: any): any {    
- 
-    console.log(response);
+  private processResponse(response: any): any {     
     return response;
   }
 }

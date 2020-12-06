@@ -6,10 +6,10 @@
 
 <h2 class="title mt-4">Posts</h2>
 
+<mat-progress-bar mode="indeterminate" *ngIf="loadData"></mat-progress-bar>
 
 
-
-<div *ngIf="!loadData">
+<div>
 
     <div *ngIf="posts && posts.length>0 else noPost">
         <div *ngFor="let post of posts" @fadeIn>

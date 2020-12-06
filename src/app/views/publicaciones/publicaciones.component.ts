@@ -37,6 +37,7 @@ export class PublicacionesComponent implements OnInit {
   }
 
   loadPost(){
+    this.loadData = true; 
     this.postService.getPost(this.user.id,`?page=${this.page}&limit=5&sortBy=id&order=desc`).subscribe((response)=>{
       this.loadData = false;
       if(response.length>0){
@@ -48,6 +49,7 @@ export class PublicacionesComponent implements OnInit {
       }else{
         this.$showMore=false;
       }
+      setTimeout(()=>{this.loadData=false},4000 );
     });
   }
 

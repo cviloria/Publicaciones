@@ -11,8 +11,6 @@ export class LoginGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log('AuthGuard#canActivate called');
-      console.log(this.auth.isAuthenticated());
     if (!this.auth.isAuthenticated()) {
       this.router.navigate(['login']);
       return false;
@@ -30,8 +28,6 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log('AuthGuard#canActivate called');
-      console.log(this.auth.isAuthenticated());
     if (this.auth.isAuthenticated()) {
       this.router.navigate(['/publicaciones']);
       return false;

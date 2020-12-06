@@ -22,7 +22,8 @@
                                [loves]="post.loves" 
                                [smile]="post.smile" 
                                [countComments]="post.countComments"
-                               (OnShow)="showComments=!showComments">
+                               (OnShow)="showComments=!showComments"
+                               (OnReaction)="reaction($event)">
 
                 </app-reactions>
             </div>

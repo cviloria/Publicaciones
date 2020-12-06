@@ -41,7 +41,6 @@ export class PostInputComponent implements OnInit {
         case 'post':
           this.postService.sendPost(this.user.id,data).subscribe((response)=>{
             if(response){
-              console.log(response);
               this.formComment.get('text').setValue('');
               this.createdPost.emit();
             }
@@ -50,7 +49,6 @@ export class PostInputComponent implements OnInit {
         case 'comment':
           this.postService.sendComment(this.user.id,this.post.id,data).subscribe((response)=>{
             if(response){
-              console.log(response);
               this.formComment.get('text').setValue('');
               this.createdPost.emit();
             }

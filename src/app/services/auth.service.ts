@@ -20,7 +20,6 @@ export class AuthService {
   }
 
   public setSession(user:User , token=null): void{
-    console.log(JSON.stringify(user))
     const $user  = { currentUser : user,
                      token : token,
                    } ;

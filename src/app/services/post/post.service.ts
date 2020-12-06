@@ -35,7 +35,9 @@ export class PostService {
     return this.apiService.post<any>(`users/${id_user}/post/${post_id}/comments`,data);  
     
   }
-
+  updateComment(id_user:number ,post_id:string,id_comment:string, data): Observable<any[]> {
+    return this.apiService.put<any>(`users/${id_user}/post/${post_id}/comments/${id_comment}`,data);      
+  }
 
 }
 
@@ -59,9 +61,16 @@ export interface Comment{
   fullName: string;
   id: string;
   likes: number;
-  love: number;
+  loves: number;
   owner: number;
   postId: string;
   smile: number;
   text: string;
+  countComments: number;
+}
+
+export interface Reaction{
+  likes?: boolean;
+  loves?: boolean;
+  smile?: boolean;
 }
