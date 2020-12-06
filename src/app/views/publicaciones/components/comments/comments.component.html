@@ -1,0 +1,71 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loadData"></mat-progress-bar>
+
+<div class="card" *ngIf="comments && comments.length>0 else noFound">
+    <ul class="list-unstyled over-flow-list">                        
+        <li class="media p-md-3" *ngFor="let comment of comments; let i=index;"> 
+            <span class="d-md-block d-none pt-2 round">
+                <img src="assets/images/groups.png" class="align-self-start mr-3">
+            </span>
+            <div class=" container media-body">
+                <div class="row d-flex">
+                    <h6 class="user pt-2">{{comment.fullName}}</h6>
+                    <div class="ml-auto">
+                        <p class="text">{{comment.createdAt | amTimeAgo:true}}</p>
+                    </div>
+                </div>
+                <p class="text">{{comment.text}}</p>   
+                <div class="mt-2">
+                    <app-reactions [likes]="comment.likes" 
+                                   [loves]="comment.loves" 
+                                   [smile]="comment.smile" 
+                                   [countComments]="comment.countComments"                                  
+                                   (OnReaction)="reaction($event, comment)"
+                    >
+                    </app-reactions>     
+    
+                </div>
+            </div>
+        </li>
+    </ul>
+    <ul class="list-unstyled">       
+        <li class="media media-comment-row mt-2">
+            <div class="media-body">
+                <div class="d-flex  row">                     
+                    <div class="col-12">
+                        <ng-container *ngTemplateOutlet="input_post" ></ng-container>
+                    </div>  
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<ng-template #noFound>
+    <div class="card">
+        <ul class="list-unstyled"> 
+            <li class="media media-comment-row">
+                <div class="media-body" *ngIf="!loadData">
+                    <div class="d-block mb-3 mb-md-0 row text-center no-result">
+                        <div class="no-found-ico"></div>                        
+                            No comment. Come on, be the first.. 
+                    </div>
+                </div>
+            </li>
+            <li class="media media-comment-row mt-2">             
+                <div class="media-body">
+                    <div class="d-flex  row"> 
+                        <div class="col-12">
+                            <ng-container *ngTemplateOutlet="input_post" ></ng-container>
+                        </div>                    
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</ng-template>
+
+
+<ng-template #input_post>
+    <app-post [post]="post" [type]="'comment'" [placeholder]="'Comment ...'" (createdPost)="loadComments()"></app-post>
+</ng-template>

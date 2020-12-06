@@ -1,0 +1,35 @@
+<div class="row mt-4">
+    <div class="col">
+        <div class="comment-group">
+
+            <div class="comment-block">
+                <div class="row">
+
+                    <div class="d-md-block d-none col-1">
+                        <span class="round pt-2">
+                            <img src="{{post.image}}" class="align-self-start mr-3">
+                        </span>
+                    </div>
+                    <div class="col-md-11 col-12">
+                        <div class="age">{{post.createdAt | amTimeAgo:true}}</div>
+                        <h5>{{post.fullName}}</h5>
+                        <p class="comment-text">{{post.text}}</p>
+                    </div>
+                </div>
+                <hr class="">
+               
+                <app-reactions [likes]="post.likes" 
+                               [loves]="post.loves" 
+                               [smile]="post.smile" 
+                               [countComments]="post.countComments"
+                               (OnShow)="showComments=!showComments"
+                               (OnReaction)="reaction($event)">
+
+                </app-reactions>
+            </div>
+        </div>
+        <ng-container *ngIf="showComments">
+            <app-comments [post]="post"></app-comments>
+        </ng-container>
+    </div>
+</div>

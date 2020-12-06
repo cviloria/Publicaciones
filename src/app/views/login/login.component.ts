@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   faEye=faEye;
   formLogin:FormGroup;
   hide = true;
+  math= Math;
   constructor(@Inject(DOCUMENT) private _document, 
               private formBuilder: FormBuilder,
               private userService: UserService,
@@ -24,13 +25,12 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this._document.body.classList.add('login-background');
-
+    const indexUser= this.math.floor(this.math.random()*10);
     this.formLogin = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
     });
-    this.userService.getUsers('?page=1&limit=1').subscribe((response)=>{
-      console.log(response);
+    this.userService.getUsers(`?id=${indexUser}`).subscribe((response)=>{
       if(response){ 
         this.formLogin.patchValue(response[0])
       }
@@ -40,11 +40,9 @@ export class LoginComponent implements OnInit, OnDestroy {
   login(){
     
     this.markFormGroupTouched(this.formLogin);
-    console.log(this.formLogin);
     if(this.formLogin.status==='VALID'){
       const paramet=`?email=${this.formLogin.get('email').value}&password=${this.formLogin.get('password').value}`
       this.userService.getUsers(paramet).subscribe((response:User[])=>{
-        console.log(response);
         if(response){ 
           this.authService.setSession(response[0]);          
           this.router.navigate(['/publicaciones']);
@@ -63,7 +61,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
   
   ngOnDestroy() {    
-    console.log('destroy');
     this._document.body.classList.add('login-background');
   }
 }

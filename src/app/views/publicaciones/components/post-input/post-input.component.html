@@ -1,0 +1,30 @@
+
+
+
+<div class="row">
+    <div class="col">
+        <div class="comment-group">
+            <div class="comment-block">    
+                <form [formGroup]="formComment">
+                    <textarea #text formControlName="text" cols="30" rows="3" placeholder="{{placeholder}}">
+        
+                    </textarea>
+                </form>                
+                <button 
+                    *ngIf="text.value!==''" 
+                    type="submit" 
+                    class="btn btn-sm btn-xs float-right comment-action" 
+                    (click)="sendPost()">Publicar</button>
+                <button 
+                    *ngIf="text.value!==''" 
+                    type="submit" 
+                    class="btn btn-sm btn-xs float-right comment-action"
+                    (click)="formComment.get('text').setValue(null)">Cancel</button>
+            </div>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,8 +1,9 @@
 import { User } from './../../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
-import { faHome,faUserAlt,faBars, faChevronDown, faStickyNote } from '@fortawesome/free-solid-svg-icons';
+import { faHome,faUserAlt,faBars, faChevronDown, faStickyNote, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { FaConfig } from '@fortawesome/angular-fontawesome';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,6 +15,8 @@ export class HeaderComponent implements OnInit {
   faStickyNote = faStickyNote;
   faBars= faBars;
   faChevronDown= faChevronDown;
+  faCog= faCog;
+  faSignOutAlt =faSignOutAlt;
 
 
   math=Math;

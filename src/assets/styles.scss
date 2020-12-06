@@ -9,7 +9,11 @@
 @import "../assets/variables.scss";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: $font-family-1 !important; }
+body { 
+    margin: 0; 
+    font-family: $font-family-1 !important; 
+    background-color: $background-posts !important;
+}
 
 
 
@@ -21,3 +25,58 @@ body { margin: 0; font-family: $font-family-1 !important; }
     background-color: $background-login !important;
     background-image: $background-image-login !important;     
 }
+
+.title{
+    font-family: $font-family-2;
+}
+
+
+
+/**Comentarios ***\
+\*****************/
+
+.comment-block {
+    padding: 1rem;
+    background-color: #fff;
+    display: table-cell;
+    vertical-align: top;
+    border-radius: 0.1875rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+
+    textarea {
+      width: 100%;
+      resize: none;
+    }
+
+
+}
+
+.comment-group {   
+    display: table;
+    width: 100%;
+    min-height: 5.3125rem;
+
+}
+
+.comment-text {
+    margin-bottom: 1.25rem;
+    color: $text-color;
+}
+
+.bottom-comment {
+    color: #acb4c2;
+    font-size: 0.875rem;
+}
+
+.comment-date {
+    float: left;
+}
+
+.comment-actions {
+    float: right;
+}
+
+
+
+
+

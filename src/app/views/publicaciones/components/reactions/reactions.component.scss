@@ -1,0 +1,95 @@
+@import "../../../../../assets/variables.scss";
+
+.comments-count{
+    cursor: pointer;
+    &:hover{
+        color: $color-blue-2;
+        background-color: transparent;
+    }
+    &:hover{			
+        font-size: 14px;
+        .comment-count {
+            width: 7%;            
+            visibility: visible;
+            font-size: 14px;
+        }
+    }    
+    .comment-count {
+        width: 0;		
+        transition: 0.2s ease-in-out;
+        visibility: hidden;
+        font-size: 0px;
+    }
+}
+
+.reactions-count{
+    cursor: pointer;
+    &:hover{
+        color: $color-blue-2;
+        background-color: transparent;
+    }
+    &:hover{			
+        font-size: 14px;
+        .comment-count {
+            width: 5%;
+            
+            visibility: visible;
+            font-size: 14px;
+        }
+    }    
+    .comment-count {
+        width: 0;		
+        transition: 0.2s ease-in-out;
+        visibility: hidden;
+        font-size: 0px;
+    }
+}
+
+.ico-reactions{
+    background-size:100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    width: 20px;
+    height: 20px;
+    
+    &:hover{
+        width: 25px;
+        height: 25px;
+        transition: 0.2s ease-in-out;
+        +.count {
+            width: 5%;           
+            visibility: visible;
+            font-size: 14px;
+        }
+    } 
+    &.comment-ico{  
+        background-image: url(/assets/images/comment.svg);
+        filter:invert(33%) sepia(30%) saturate(899%) hue-rotate(190deg) brightness(89%) contrast(82%);
+
+    }
+    &.like-ico{  
+        background-image: url(/assets/images/like.svg);
+        filter: invert(41%) sepia(61%) saturate(2338%) hue-rotate(165deg) brightness(100%) contrast(101%);        
+
+    }
+    &.smile-ico{  
+        background-image: url(/assets/images/smile.svg);
+        filter: invert(82%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+     
+
+    }
+    &.loves-ico{  
+        background-image: url(/assets/images/love.svg);
+        filter: invert(26%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+    }
+
+    +.count {
+        padding: 3px;
+        width: 0;		
+        transition: 0.2s ease-in-out;
+        visibility: hidden;
+        font-size: 0px;
+    }
+}
+
+

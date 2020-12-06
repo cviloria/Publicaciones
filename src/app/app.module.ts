@@ -1,3 +1,5 @@
+import { FooterComponent } from './layout/footer/footer.component';
+import { Helper } from './core/helper';
 import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard, LoginGuard } from './guards/login.guard';
@@ -15,12 +17,13 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 const APP_LAYOUTS = [
   SimpleLayoutComponent
 ];
 
 const COMPONENTS = [
-  HeaderComponent, LoginComponent
+  HeaderComponent, LoginComponent, FooterComponent
 ];
 
 const APP_SERVICES = [
@@ -45,13 +48,15 @@ const APP_SERVICES = [
     BrowserAnimationsModule,
     FontAwesomeModule,
     SimpleNotificationsModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [
     FormsModule,
     ReactiveFormsModule,
     LoginGuard,
     AuthGuard,
+    Helper,
     ...APP_SERVICES
   ],
   bootstrap: [AppComponent]
