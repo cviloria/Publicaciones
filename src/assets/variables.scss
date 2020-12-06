@@ -1,4 +1,11 @@
 
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}  
+}
+
 $font-family-1: 'Exo 2', sans-serif;
 $font-family-2: 'Architects Daughter', cursive;
 $color-blue:#396afc;
@@ -11,4 +18,11 @@ $font-size-18: 18px;
 
 $background-login: #fefefe;
 $background-image-login: linear-gradient(315deg, #fefefe 0%, #00a4e4 74%);
+
+
+$background-posts:#F0F2FA;
+
+$placeholder: #ced2db;
+$text-color: #555f77;
+$links: #0095ff;
 

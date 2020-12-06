@@ -1,1 +1,33 @@
-<p>publicaciones works!</p>
+
+<app-post (createdPost)="page=1;$showMore=true;loadPost()"></app-post>
+
+<h2 class="title mt-4">Posts</h2>
+
+
+
+
+<div *ngIf="!loadData">
+
+    <div *ngIf="posts && posts.length>0 else noPost">
+        <div *ngFor="let post of posts" @fadeIn>
+            <div class="row">
+                <div class="col-md-12 posts-content">
+                    <app-post-card [post]="post"></app-post-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <pre>{{posts|json}}</pre> -->
+
+<ng-container *ngIf="posts &&  posts.length>0 && $showMore">
+    <div class="text-center mt-3">
+        <button class="btn btn-xs show-more" (click)="showMore()">Show more</button>
+    </div>
+</ng-container>
+
+<ng-template #noPost>
+Post dont found...
+</ng-template>
+
+<div class="mt-5 mb-5"></div>

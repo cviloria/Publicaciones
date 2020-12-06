@@ -1,0 +1,19 @@
+@import "../../../assets/variables.scss";
+
+
+.show-more{  
+    background-image: linear-gradient(360deg, #fefefe 0%, $color-blue-2 12%);
+    color: #fff;
+    border-color: #FFF;
+    /* &:hover{
+        transition: ;
+    } */
+}
+
+.posts-content{
+    transition: 0.2s ease-in-out;
+}
+
+.btn:focus{
+    box-shadow:none;
+}

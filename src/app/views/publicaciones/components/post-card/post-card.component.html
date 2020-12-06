@@ -1,0 +1,32 @@
+<div class="row mt-4">
+    <div class="col">
+        <div class="comment-group">
+            <div class="photo">
+                <div class="avatar"
+                    style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg')">
+                </div>
+            </div>
+            <div class="comment-block">
+                <div class="age">{{post.createdAt | amTimeAgo:true}}</div>
+                <h5>{{post.fullName}}</h5>
+                <p class="comment-text">{{post.text}}</p>
+                <hr class="">
+                <div class="bottom-comment">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            {{post.likes}}
+                            {{post.smile}}
+                            {{post.loves}}
+                        </div>
+                        <div class="col-md-6 col-12  text-md-right">
+                            <span class="comments-count">{{post.countComments}} Comments</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-comments [post]="post"></app-comments>
+    </div>
+</div>
